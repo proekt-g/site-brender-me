@@ -1,0 +1,49 @@
+body {
+  font-family: $default-font, sans-serif;
+  color: $mainColor;
+  font-weight: $mainWeight;
+  font-size: $mainSize;
+  a,
+  button,
+  label,
+  p {
+    background-color: transparent;
+    color: $mainColor;
+    font-weight: $mainWeight;
+    font-size: $mainSize;
+    transition: 0.3s;
+  }
+  img {
+    object-fit: cover;
+  }
+  &.block {
+    overflow: hidden;
+  }
+}
+.header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 5;
+}
+main {
+  flex-grow: 1;
+}
+.container {
+  max-width: calc(#{$content-width} + 20px);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+  @media (max-width: 900px) {
+    padding: 0 30px;
+  }
+  &--flex {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.wrapper-fullscreen {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
