@@ -25,6 +25,9 @@ body {
   width: 100%;
   top: 0;
   z-index: 5;
+  @media (max-width: 900px) {
+    position: fixed;
+  }
 }
 main {
   flex-grow: 1;
@@ -46,4 +49,294 @@ main {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+.title {
+  font-size: 48px;
+  line-height: 59px;
+  color: #000000;
+  @media (max-width: 500px) {
+    font-size: 24px;
+    line-height: 29px;
+  }
+}
+.subtitle {
+  font-size: 44px;
+  line-height: 54px;
+  color: #000000;
+  @media (max-width: 700px) {
+    font-size: 30px;
+    line-height: 35px;
+    font-weight: normal;
+  }
+  @media (max-width: 500px) {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+.text {
+  line-height: 30px;
+  @media (max-width: 700px) {
+    font-size: 16px;
+    line-height: 25px;
+  }
+}
+.course {
+  margin-top: 100px;
+  text-align: center;
+  @media (max-width: 900px) {
+    margin-top: 60px;
+  }
+  @media (max-width: 500px) {
+    margin-top: 40px;
+  }
+  .container {
+    @media (max-width: 900px) {
+      padding: 0;
+    }
+  }
+  .title {
+    @media (max-width: 500px) {
+      display: none;
+      padding-left: 50px;
+      text-align: left;
+    }
+  }
+  &__amount {
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--grey-type-two);
+    text-align: left;
+    padding-left: 50px;
+    margin-top: 4px;
+  }
+  .text {
+    max-width: 662px;
+    margin: 68px auto 11px;
+    @media (max-width: 900px) {
+      margin: 30px auto 20px;
+      padding: 0 30px;
+    }
+    @media (max-width: 500px) {
+      display: none;
+    }
+  }
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 900px) {
+      overflow: scroll;
+      padding-left: 30px;
+      padding-bottom: 47px;
+      // padding-right: 30px;
+    }
+    @media (max-width: 500px) {
+      margin-top: 25px;
+      padding-left: 50px;
+    }
+  }
+  &__box {
+    flex: 0 0 calc(25% - (136px / 3));
+    cursor: pointer;
+    position: relative;
+    height: 452px;
+    @media (max-width: 1400px) {
+      flex: 0 0 calc(25% - 10px);
+    }
+    @media (max-width: 1200px) {
+      height: 400px;
+      flex: 0 0 calc(25% - 5px);
+    }
+    @media (max-width: 900px) {
+      flex: 0 0 267px;
+      margin-right: 23px;
+      height: 360px;
+    }
+    &:hover {
+      .course__box-img {
+        bottom: 7px;
+        @media (max-width: 900px) {
+          bottom: 0;
+        }
+      }
+      .course__box-text {
+        padding-left: 5px;
+      }
+      .course__box-cube {
+        box-shadow: 0px 20px 34px rgba(0, 0, 0, 0.1);
+      }
+    }
+    &-cube {
+      position: absolute;
+      width: calc(100% - 2px);
+      height: 64.34%;
+      bottom: 12px;
+      left: 1px;
+      transition: 0.3s ease-out;
+      @media (max-width: 1200px) {
+        height: 54.34%;
+      }
+      @media (max-width: 900px) {
+        bottom: 1px;
+        box-shadow: 0px 20px 34px rgba(0, 0, 0, 0.1);
+        height: 74.34%;
+      }
+    }
+    &-img {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: 0.3s ease-out;
+      @media (max-width: 900px) {
+        height: 100%;
+      }
+    }
+    &-text {
+      position: absolute;
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 30px;
+      color: #000000;
+      left: 23px;
+      bottom: 35px;
+      transition: 0.3s ease-out;
+      @media (max-width: 1200px) {
+        font-size: 18px;
+      }
+      @media (max-width: 500px) {
+        bottom: 25px;
+      }
+    }
+    &-line {
+      position: absolute;
+      width: 24px;
+      height: 2px;
+      background: #000000;
+      left: 23px;
+      bottom: 82px;
+      @media (max-width: 500px) {
+        bottom: 70px;
+      }
+    }
+  }
+  &__timetable {
+    line-height: 63px;
+    height: 63px;
+    display: inline-block;
+    padding: 0 57px;
+    margin: 78px auto 0;
+    border: 1px solid;
+    position: relative;
+    border-image: linear-gradient(199.76deg, #ff14a1 -31.81%, #6e56ff 162.41%) 1;
+    @media (max-width: 900px) {
+      margin-top: 20px;
+    }
+    @media (max-width: 500px) {
+      margin-top: 0;
+      padding: 0 32px;
+    }
+    &:hover {
+      &::after {
+        left: -48px;
+      }
+      &::before {
+        right: -51px;
+      }
+    }
+    &::after,
+    &::before {
+      transition: 0.3s ease-out;
+      @media (max-width: 500px) {
+        display: none;
+      }
+    }
+    &::after {
+      content: url(../images/course-button-1.svg);
+      position: absolute;
+      bottom: -12px;
+      left: -20px;
+    }
+    &::before {
+      content: url(../images/course-button-2.svg);
+      position: absolute;
+      top: -5px;
+      right: -17px;
+    }
+    &-text {
+      background-image: linear-gradient(211.23deg, #ff14a1 -5.23%, #6e56ff 172.39%);
+      background-size: 100%;
+      background-repeat: repeat;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-background-clip: text;
+      -moz-text-fill-color: transparent;
+      font-weight: 500;
+      font-size: 18px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      @media (max-width: 500px) {
+        font-size: 16px;
+      }
+    }
+  }
+}
+.mobile {
+  display: none;
+  @media (max-width: 500px) {
+    display: block !important;
+  }
+}
+.video-course {
+  padding: 93px 0 63px;
+  background-color: var(--grey-type-three);
+  margin-top: 128px;
+  .subtitle {
+    text-align: center;
+  }
+  &__subtitle {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 25px;
+    color: #000000;
+    margin: 57px 0 51px;
+  }
+  &__block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: -67px;
+  }
+  &__box {
+    flex: 0 0 calc(25% - (35px * 3));
+    margin-top: 67px;
+    text-align: center;
+  }
+  &__picture {
+    // background: url(../images/video-course-2.jpg) center / cover no-repeat fixed, linear-gradient(#00a8de, #fff) fixed; /* Градиент */
+    // background-blend-mode: luminosity; /* Режим наложения */
+    // display: block;
+    // // background-image: url(../images/video-course-2.jpg);
+    // width: 100%;
+    // height: 100%;
+    // // background-repeat: no-repeat;
+    // background-blend-mode: multiply;
+    // position: relative;
+    // &::after {
+    //   content: "";
+    //   width: 100%;
+    //   height: 100%;
+    //   position: absolute;
+    //   left: 0;
+    //   top: 0;
+    //   background-color: #3ee0d6;
+    //   // z-index: 0;
+    //   border-radius: 25px;
+    //   // opacity: 0.7;
+    // }
+  }
+  &__img {
+    border-radius: 25px;
+    // psr
+    // opacity: 0;
+  }
 }

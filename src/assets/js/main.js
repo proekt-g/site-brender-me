@@ -1,13 +1,16 @@
 document.onreadystatechange = function () {
     if (document.readyState === "interactive") {
-        if (document.documentElement.clientWidth <= 900) {
-            document.querySelector('.menu__desktop').insertAdjacentElement('beforeend', document.querySelector('.header__socials'))
-        }
+
+        document.documentElement.clientWidth <= 1200
+            && document.querySelector('.promo__video')
+            && document.querySelector('.promo__info .subtitle').insertAdjacentElement('afterend', document.querySelector('.promo__video'))
+        document.documentElement.clientWidth <= 900 && document.querySelector('.menu__desktop').insertAdjacentElement('beforeend', document.querySelector('.header__socials'))
     }
 }
 // $(window).on('load', () => {
 window.addEventListener("load", function () {
     // variables
+    const BODY = document.querySelector('body')
     // selecror
     const $menu = document.querySelector('.menu'),
         $menuBurger = document.querySelector('.menu__burger')
@@ -15,6 +18,10 @@ window.addEventListener("load", function () {
     // /variables
     // ----------------------------------------------
     // universal function
+    // function isTouchDevice() {
+    //     return 'ontouchstart' in window
+    //         || navigator.maxTouchPoints;
+    // }
     // function ajaxRequest(ajaxForm, url) {
     //     try {
     //         history.replaceState(null, null, "#")
@@ -40,8 +47,9 @@ window.addEventListener("load", function () {
     //  /universal function
     // ----------------------------------------------
     // event
-    $menuBurger && $menuBurger.addEventListener('click', () => {
+    document.documentElement.clientWidth <= 1200 && $menu.addEventListener('click', () => {
         $menu.classList.toggle('menu--open')
+        BODY.classList.toggle('block')
     })
     // forms
     // $("#registration-form").on("input, submit", (e) => {
